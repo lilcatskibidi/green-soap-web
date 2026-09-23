@@ -4,17 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Soap Company – Lọc dầu thải, trải mầm xanh</title>
-    <!-- Google Fonts: Montserrat + Poppins (hỗ trợ tiếng Việt) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ===== RESET & VARIABLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary: #2e7d32;
@@ -32,12 +26,10 @@
             --shadow-lg: 0 25px 50px rgba(46, 125, 50, 0.15);
             --radius: 20px;
             --radius-sm: 14px;
-            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Montserrat', 'Poppins', sans-serif;
@@ -47,50 +39,41 @@
             overflow-x: hidden;
         }
 
-        /* ===== ANIMATIONS ===== */
         @keyframes fadeUp {
             0% { opacity: 0; transform: translateY(32px); }
             100% { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-8px); }
             100% { transform: translateY(0px); }
         }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.5); }
-            70% { box-shadow: 0 0 0 18px rgba(76, 175, 80, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
-        }
-
         @keyframes spinSlow {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-
         @keyframes leafFloat {
             0% { transform: translateY(-8px) rotate(0deg); opacity: 0.4; }
             50% { transform: translateY(6px) rotate(12deg); opacity: 0.7; }
             100% { transform: translateY(-8px) rotate(0deg); opacity: 0.4; }
         }
-
-        /* ===== UTILITY ===== */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        @keyframes slideInLeft {
+            0% { opacity: 0; transform: translateX(-30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes logoPop {
+            0% { transform: scale(0.7); opacity: 0; }
+            60% { transform: scale(1.08); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .section-padding { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
 
         .section-title {
             font-size: 2.4rem;
@@ -122,11 +105,10 @@
             margin: 0 auto;
         }
 
-        /* ===== HEADER / STICKY NAV ===== */
+        /* HEADER */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(14px);
@@ -156,9 +138,7 @@
             transition: transform 0.4s ease;
         }
 
-        .logo-container:hover img {
-            transform: rotate(-6deg) scale(1.06);
-        }
+        .logo-container:hover img { transform: rotate(-6deg) scale(1.06); }
 
         .logo-text {
             font-weight: 800;
@@ -168,11 +148,7 @@
             letter-spacing: 1px;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-        }
+        nav ul { display: flex; list-style: none; gap: 30px; }
 
         nav a {
             text-decoration: none;
@@ -187,8 +163,7 @@
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: 0; left: 0;
             width: 0%;
             height: 3px;
             background: var(--primary-light);
@@ -196,15 +171,10 @@
             transition: width 0.3s ease;
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--primary-light); }
 
-        nav a:hover {
-            color: var(--primary-light);
-        }
-
-        /* ===== HERO SECTION ===== */
+        /* HERO */
         #home {
             padding: 160px 0 100px;
             background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
@@ -215,12 +185,10 @@
             overflow: hidden;
         }
 
-        /* Trang trí lá cây */
         #home::before {
             content: '🌿';
             position: absolute;
-            top: 12%;
-            left: 2%;
+            top: 12%; left: 2%;
             font-size: 7rem;
             opacity: 0.08;
             transform: rotate(-18deg);
@@ -231,8 +199,7 @@
         #home::after {
             content: '🍃';
             position: absolute;
-            bottom: 8%;
-            right: 3%;
+            bottom: 8%; right: 3%;
             font-size: 6rem;
             opacity: 0.1;
             transform: rotate(22deg);
@@ -311,9 +278,7 @@
             box-shadow: 0 14px 32px rgba(46, 125, 50, 0.45);
         }
 
-        .cta-btn:hover::after {
-            margin-left: 14px;
-        }
+        .cta-btn:hover::after { margin-left: 14px; }
 
         .hero-media {
             flex: 1;
@@ -345,10 +310,8 @@
             box-shadow: 0 30px 60px rgba(46, 125, 50, 0.25);
         }
 
-        /* ===== ABOUT SECTION ===== */
-        #about {
-            background: var(--bg-white);
-        }
+        /* ABOUT */
+        #about { background: var(--bg-white); }
 
         .about-grid {
             display: grid;
@@ -366,10 +329,6 @@
             animation: fadeUp 0.8s ease both;
         }
 
-        .about-card:nth-child(1) { animation-delay: 0.1s; }
-        .about-card:nth-child(2) { animation-delay: 0.2s; }
-        .about-card:nth-child(3) { animation-delay: 0.3s; }
-
         .about-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-md);
@@ -383,9 +342,7 @@
             transition: transform 0.4s;
         }
 
-        .about-card:hover img {
-            transform: scale(1.12) rotate(4deg);
-        }
+        .about-card:hover img { transform: scale(1.12) rotate(4deg); }
 
         .about-card h3 {
             color: var(--primary);
@@ -394,15 +351,10 @@
             font-weight: 700;
         }
 
-        .about-card p {
-            color: #555;
-            font-size: 0.98rem;
-        }
+        .about-card p { color: #555; font-size: 0.98rem; }
 
-        /* ===== PRODUCTS SECTION ===== */
-        #products {
-            background: var(--bg-off);
-        }
+        /* PRODUCTS */
+        #products { background: var(--bg-off); }
 
         .product-grid {
             display: grid;
@@ -419,12 +371,8 @@
             transition: var(--transition);
             border: 1px solid rgba(0, 0, 0, 0.03);
             animation: fadeUp 0.7s ease both;
+            cursor: pointer;
         }
-
-        .product-card:nth-child(1) { animation-delay: 0.05s; }
-        .product-card:nth-child(2) { animation-delay: 0.15s; }
-        .product-card:nth-child(3) { animation-delay: 0.25s; }
-        .product-card:nth-child(4) { animation-delay: 0.35s; }
 
         .product-card:hover {
             transform: translateY(-8px) scale(1.01);
@@ -439,9 +387,7 @@
             transition: transform 0.4s;
         }
 
-        .product-card:hover img {
-            transform: rotate(-6deg) scale(1.1);
-        }
+        .product-card:hover img { transform: rotate(-6deg) scale(1.1); }
 
         .product-card h4 {
             color: var(--primary);
@@ -450,15 +396,10 @@
             font-weight: 700;
         }
 
-        .product-card p {
-            font-size: 0.92rem;
-            color: #666;
-        }
+        .product-card p { font-size: 0.92rem; color: #666; }
 
-        /* ===== MEDIA SECTION (AUDIO) ===== */
-        #media {
-            background: var(--bg-white);
-        }
+        /* MEDIA */
+        #media { background: var(--bg-white); }
 
         .audio-player-box {
             background: linear-gradient(135deg, #1b5e20, #388e3c);
@@ -471,7 +412,6 @@
             box-shadow: 0 25px 50px rgba(27, 94, 32, 0.3);
             transition: var(--transition);
             animation: fadeUp 0.8s ease both;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .audio-player-box:hover {
@@ -488,15 +428,8 @@
             gap: 12px;
         }
 
-        .audio-player-box h3 span {
-            animation: spinSlow 5s linear infinite;
-            display: inline-block;
-        }
-
-        .audio-player-box p {
-            opacity: 0.9;
-            font-weight: 400;
-        }
+        .audio-player-box h3 span { animation: spinSlow 5s linear infinite; display: inline-block; }
+        .audio-player-box p { opacity: 0.9; font-weight: 400; }
 
         audio {
             width: 100%;
@@ -505,10 +438,473 @@
             filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
         }
 
-        /* ===== CAMPAIGN SECTION ===== */
-        #campaign {
-            background: var(--bg-light);
+        /* 3D DEMO */
+        #demo {
+            background: linear-gradient(160deg, #f0f9e8 0%, #e3f2dc 40%, #f7fcf0 100%);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            color: #1e3a1e;
         }
+
+        #demo::before {
+            content: '🌱';
+            position: absolute;
+            top: 5%; left: 2%;
+            font-size: 8rem;
+            opacity: 0.06;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+
+        #demo::after {
+            content: '🍃';
+            position: absolute;
+            bottom: 5%; right: 2%;
+            font-size: 7rem;
+            opacity: 0.08;
+            transform: rotate(20deg);
+            pointer-events: none;
+        }
+
+        .demo-hero {
+            text-align: center;
+            padding: 100px 5% 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo-hero .section-title {
+            color: var(--primary);
+            font-size: 3rem;
+            letter-spacing: -1px;
+        }
+
+        .demo-hero .section-title::after {
+            background: var(--accent);
+            box-shadow: 0 0 20px rgba(251, 192, 45, 0.5);
+        }
+
+        .demo-hero .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        .demo-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 30px;
+            padding: 0 5% 100px;
+            max-width: 1500px;
+            margin: 0 auto;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .demo-info-left {
+            padding: 30px 20px;
+            animation: slideInLeft 0.8s ease both;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: #ffffff;
+            border: 1.5px solid rgba(76, 175, 80, 0.3);
+            color: var(--primary);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 7px 18px;
+            border-radius: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.08);
+        }
+
+        .product-name-display {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.05;
+            margin-bottom: 14px;
+            letter-spacing: -1.5px;
+            transition: var(--transition);
+        }
+
+        .product-name-display .accent {
+            color: var(--accent-warm);
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .product-tagline {
+            font-size: 1.05rem;
+            color: #4a6b4a;
+            margin-bottom: 28px;
+            font-style: italic;
+            line-height: 1.7;
+            min-height: 56px;
+            transition: var(--transition);
+        }
+
+        .product-features { list-style: none; margin-bottom: 30px; }
+
+        .product-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 13px 0;
+            border-bottom: 1px dashed rgba(76, 175, 80, 0.25);
+            font-size: 0.92rem;
+            color: #2e4a2e;
+            font-weight: 500;
+            animation: fadeUp 0.5s ease both;
+            transition: var(--transition);
+        }
+
+        .product-features li:hover {
+            color: var(--primary);
+            padding-left: 6px;
+        }
+
+        .product-features li:last-child { border-bottom: none; }
+
+        .product-features .check {
+            color: var(--primary-light);
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+            font-weight: 800;
+        }
+
+        .demo-canvas-wrapper {
+            position: relative;
+            height: 680px;
+            border-radius: 36px;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 50% 30%, #ffffff 0%, #e8f5e9 60%, #d0e8d0 100%);
+            box-shadow:
+                0 30px 80px rgba(46, 125, 50, 0.15),
+                inset 0 0 60px rgba(255, 255, 255, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        #canvas-container {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* LOADER */
+        #loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 30;
+            text-align: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #ffffff;
+            padding: 8px;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.2);
+            animation: logoPop 1.2s infinite ease-in-out;
+            object-fit: contain;
+        }
+
+        .loader-text {
+            margin-top: 14px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-selector {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 16px;
+            border-radius: 50px;
+            border: 1.5px solid rgba(76, 175, 80, 0.2);
+            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.2);
+            z-index: 20;
+        }
+
+        .selector-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid rgba(76, 175, 80, 0.2);
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .selector-btn:hover {
+            transform: scale(1.15);
+            border-color: var(--primary-light);
+            box-shadow: 0 6px 16px rgba(46, 125, 50, 0.2);
+        }
+
+        .selector-btn.active {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(251, 192, 45, 0.3), 0 6px 20px rgba(251, 192, 45, 0.4);
+            transform: scale(1.12);
+        }
+
+        .selector-btn .scent-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-controls-float {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 20;
+        }
+
+        .ctrl-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(76, 175, 80, 0.2);
+            color: var(--primary);
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(46, 125, 50, 0.12);
+        }
+
+        .ctrl-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 8px 22px rgba(46, 125, 50, 0.3);
+        }
+
+        .ctrl-btn.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary-light);
+        }
+
+        .ctrl-btn.compare-active {
+            background: var(--accent);
+            color: #1e3a1e;
+            border-color: var(--accent-warm);
+            box-shadow: 0 0 0 4px rgba(251, 192, 45, 0.3);
+        }
+
+        .demo-hint-float {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 9px 18px;
+            border-radius: 30px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            border: 1px solid rgba(76, 175, 80, 0.15);
+            z-index: 20;
+            pointer-events: none;
+            box-shadow: 0 4px 14px rgba(46, 125, 50, 0.08);
+        }
+
+        .demo-info-right {
+            padding: 30px 20px;
+            animation: slideInRight 0.8s ease both;
+        }
+
+        .spec-title {
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--accent-warm);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(251, 192, 45, 0.3);
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px dashed rgba(76, 175, 80, 0.2);
+            transition: var(--transition);
+        }
+
+        .spec-item:hover {
+            background: rgba(255, 255, 255, 0.6);
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 10px;
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .spec-value {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 800;
+            text-align: right;
+        }
+
+        .spec-value.highlight {
+            color: var(--accent-warm);
+            font-size: 1.05rem;
+        }
+
+        .dimensions-visual {
+            margin-top: 25px;
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 18px;
+            border: 1.5px dashed rgba(76, 175, 80, 0.35);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.06);
+        }
+
+        .dimensions-visual h4 {
+            font-size: 0.68rem;
+            color: var(--accent-warm);
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .dim-box {
+            position: relative;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .dim-shape {
+            width: 100px;
+            height: 75px;
+            background: linear-gradient(135deg, #ffffff, #e8f5e9);
+            border: 2.5px solid var(--primary-light);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .dim-line-h {
+            position: absolute;
+            top: 50%;
+            left: -42px;
+            right: -42px;
+            height: 1.5px;
+            background: var(--accent-warm);
+            transform: translateY(-50%);
+        }
+
+        .dim-line-h::before,
+        .dim-line-h::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            width: 1.5px;
+            height: 10px;
+            background: var(--accent-warm);
+        }
+
+        .dim-line-h::before { left: 0; }
+        .dim-line-h::after { right: 0; }
+
+        .dim-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+            box-shadow: 0 3px 10px rgba(46, 125, 50, 0.15);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .dim-line-v {
+            position: absolute;
+            left: 50%;
+            top: -18px;
+            bottom: -18px;
+            width: 1.5px;
+            background: var(--accent-warm);
+            transform: translateX(-50%);
+        }
+
+        .dim-line-v::before,
+        .dim-line-v::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            width: 10px;
+            height: 1.5px;
+            background: var(--accent-warm);
+        }
+
+        .dim-line-v::before { top: 0; }
+        .dim-line-v::after { bottom: 0; }
+
+        /* CAMPAIGN */
+        #campaign { background: var(--bg-light); }
 
         .campaign-card {
             background: var(--bg-white);
@@ -561,30 +957,13 @@
             transition: var(--transition);
         }
 
-        .step:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-sm);
-        }
+        .step:hover { transform: translateY(-6px); box-shadow: var(--shadow-sm); }
 
-        .step .icon {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            display: block;
-        }
+        .step .icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
+        .step h4 { color: var(--primary); font-weight: 700; margin-bottom: 6px; }
+        .step p { font-size: 0.88rem; color: #666; margin: 0; }
 
-        .step h4 {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .step p {
-            font-size: 0.88rem;
-            color: #666;
-            margin: 0;
-        }
-
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         footer {
             background: var(--text-dark);
             color: #fff;
@@ -615,116 +994,69 @@
             margin: 0 auto;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .demo-showcase {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 5% 80px;
+            }
+            .demo-info-left, .demo-info-right { padding: 20px; text-align: center; }
+            .product-features li { justify-content: center; }
+            .product-name-display { font-size: 2.6rem; }
+            .demo-canvas-wrapper { height: 560px; }
+        }
+
         @media (max-width: 900px) {
-            .hero-grid {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-            }
-
-            .hero-content {
-                max-width: 100%;
-            }
-
-            .hero-title {
-                font-size: 2.6rem;
-            }
-
-            .hero-slogan {
-                font-size: 1.3rem;
-            }
+            .hero-grid { flex-direction: column; text-align: center; gap: 40px; }
+            .hero-content { max-width: 100%; }
+            .hero-title { font-size: 2.6rem; }
+            .hero-slogan { font-size: 1.3rem; }
         }
 
         @media (max-width: 768px) {
-            .section-padding {
-                padding: 70px 0;
-            }
-
-            .section-title {
-                font-size: 1.9rem;
-            }
-
-            #home {
-                padding: 130px 0 70px;
-            }
-
-            .hero-title {
-                font-size: 2.2rem;
-            }
-
-            .hero-slogan {
-                font-size: 1.1rem;
-                padding: 6px 18px;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .poster-preview {
-                max-width: 270px;
-            }
-
-            .audio-player-box {
-                padding: 34px 22px;
-            }
-
-            .audio-player-box h3 {
-                font-size: 1.4rem;
-            }
-
-            .campaign-card {
-                padding: 34px 24px;
-            }
-
-            .campaign-card h3 {
-                font-size: 1.5rem;
-            }
-
-            .campaign-steps {
-                flex-direction: column;
-                gap: 18px;
-            }
-
-            .step {
-                flex: 1 1 auto;
-            }
+            .section-padding { padding: 70px 0; }
+            .section-title { font-size: 1.9rem; }
+            #home { padding: 130px 0 70px; }
+            .hero-title { font-size: 2.2rem; }
+            .hero-slogan { font-size: 1.1rem; padding: 6px 18px; }
+            nav ul { display: none; }
+            .poster-preview { max-width: 270px; }
+            .audio-player-box { padding: 34px 22px; }
+            .audio-player-box h3 { font-size: 1.4rem; }
+            .campaign-card { padding: 34px 24px; }
+            .campaign-card h3 { font-size: 1.5rem; }
+            .campaign-steps { flex-direction: column; gap: 18px; }
+            .step { flex: 1 1 auto; }
+            .demo-canvas-wrapper { height: 480px; }
+            .demo-hero .section-title { font-size: 2.1rem; }
+            .product-name-display { font-size: 2rem; }
+            .selector-btn { width: 44px; height: 44px; }
+            .selector-btn .scent-dot { width: 20px; height: 20px; }
         }
 
         @media (max-width: 480px) {
-            .hero-title {
-                font-size: 1.9rem;
-            }
-
-            .logo-text {
-                font-size: 1rem;
-            }
-
-            .logo-container img {
-                height: 38px;
-            }
+            .hero-title { font-size: 1.9rem; }
+            .logo-text { font-size: 1rem; }
+            .logo-container img { height: 38px; }
+            .demo-canvas-wrapper { height: 420px; }
+            .product-name-display { font-size: 1.7rem; }
+            .selector-btn { width: 40px; height: 40px; }
+            .selector-btn .scent-dot { width: 18px; height: 18px; }
+            .demo-controls-float { top: 12px; right: 12px; gap: 8px; }
+            .ctrl-btn { width: 40px; height: 40px; font-size: 1rem; }
+            .demo-hint-float { font-size: 0.65rem; padding: 6px 12px; top: 12px; left: 12px; }
         }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e8f5e9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-light);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary);
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #e8f5e9; }
+        ::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
     </style>
 </head>
 <body>
 
-    <!-- ===== HEADER / NAV ===== -->
+    <!-- HEADER -->
     <header>
         <div class="container header-inner">
             <a href="#home" class="logo-container">
@@ -737,13 +1069,13 @@
                     <li><a href="#about">Về Dự Án</a></li>
                     <li><a href="#products">Sản Phẩm</a></li>
                     <li><a href="#media">Nhạc Chủ Đề</a></li>
-                    <li><a href="#campaign">Lan Tỏa</a></li>
+                    <li><a href="#demo">Demo 3D</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- HERO -->
     <section id="home">
         <div class="container hero-grid">
             <div class="hero-content">
@@ -765,7 +1097,7 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
+    <!-- ABOUT -->
     <section id="about" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -795,7 +1127,7 @@
         </div>
     </section>
 
-    <!-- ===== PRODUCTS SECTION ===== -->
+    <!-- PRODUCTS -->
     <section id="products" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -803,25 +1135,25 @@
                 <p class="section-subtitle">Chiết xuất từ các thành phần thảo mộc tự nhiên</p>
             </div>
             <div class="product-grid">
-                <div class="product-card">
-                    <img src="assets/images/chan-sa.png" alt="Chanh Sả"
-                         onerror="this.src='https://via.placeholder.com/95/4caf50/ffffff?text=Chanh+Sa'">
+                <div class="product-card" data-product="0">
+                    <img src="assets/images/chanh-sa.png" alt="Chanh Sả"
+                         onerror="this.src='https://via.placeholder.com/95/8bc34a/ffffff?text=Chanh+Sa'">
                     <h4>Chanh Sả</h4>
                     <p>Hương thơm dịu mát, sảng khoái và hỗ trợ kháng khuẩn nhẹ.</p>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-product="1">
                     <img src="assets/images/ca-phe.png" alt="Cà Phê"
                          onerror="this.src='https://via.placeholder.com/95/6d4c41/ffffff?text=Ca+Phe'">
                     <h4>Cà Phê</h4>
                     <p>Tẩy tế bào chết nhẹ nhàng, khử mùi gian bếp hiệu quả.</p>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-product="2">
                     <img src="assets/images/than-hoat-tinh.png" alt="Than Hoạt Tính"
                          onerror="this.src='https://via.placeholder.com/95/37474f/ffffff?text=Than+HT'">
                     <h4>Than Hoạt Tính</h4>
                     <p>Làm sạch sâu, loại bỏ bụi bẩn và dầu thừa bám dính.</p>
                 </div>
-                <div class="product-card">
+                <div class="product-card" data-product="3">
                     <img src="assets/images/nghe.png" alt="Nghệ Tươi"
                          onerror="this.src='https://via.placeholder.com/95/f9a825/ffffff?text=Nghe'">
                     <h4>Nghệ Tươi</h4>
@@ -831,7 +1163,7 @@
         </div>
     </section>
 
-    <!-- ===== MEDIA SECTION (AUDIO) ===== -->
+    <!-- MEDIA -->
     <section id="media" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -849,7 +1181,94 @@
         </div>
     </section>
 
-    <!-- ===== CAMPAIGN SECTION ===== -->
+    <!-- 3D DEMO -->
+    <section id="demo">
+        <div class="demo-hero">
+            <h2 class="section-title">Trải Nghiệm 3D</h2>
+            <p class="section-subtitle">Chọn từng dòng sản phẩm hoặc bật chế độ so sánh để khám phá</p>
+        </div>
+
+        <div class="demo-showcase">
+            <div class="demo-info-left">
+                <div class="product-badge" id="productBadge">🌿 HỮU CƠ</div>
+                <h3 class="product-name-display" id="productName">
+                    <span class="accent" id="productAccent">DÒNG SẢN PHẨM</span>
+                    <span id="productNameMain">Chanh Sả</span>
+                </h3>
+                <p class="product-tagline" id="productTagline">
+                    "Hương thơm dịu mát, sảng khoái và hỗ trợ kháng khuẩn nhẹ."
+                </p>
+                <ul class="product-features" id="productFeatures">
+                    <li><span class="check">✓</span> Dầu ăn tái chế tinh lọc</li>
+                    <li><span class="check">✓</span> Tinh dầu chanh sả tự nhiên</li>
+                    <li><span class="check">✓</span> Độ pH an toàn 7.5 - 8.5</li>
+                    <li><span class="check">✓</span> Bao bì Kraft tái chế 100%</li>
+                </ul>
+            </div>
+
+            <div class="demo-canvas-wrapper">
+                <div id="canvas-container"></div>
+
+                <!-- LOADER chờ logo -->
+                <div id="loader">
+                    <img src="assets/images/logo.png" alt="Loading" class="loader-logo"
+                         onerror="this.src='https://via.placeholder.com/90/2e7d32/ffffff?text=GS'">
+                    <div class="loader-text">Đang tải logo…</div>
+                </div>
+
+                <div class="demo-hint-float">💡 Kéo để xoay · Cuộn để zoom</div>
+
+                <div class="demo-controls-float">
+                    <button class="ctrl-btn active" id="btnAutoRotate" title="Tự động xoay">⏸</button>
+                    <button class="ctrl-btn" id="btnReset" title="Reset góc nhìn">🔄</button>
+                    <button class="ctrl-btn" id="btnCompare" title="So sánh 4 sản phẩm">⚖</button>
+                </div>
+
+                <div class="product-selector" id="productSelector">
+                    <button class="selector-btn active" data-product="0" title="Chanh Sả">
+                        <span class="scent-dot" style="background: #8bc34a;"></span>
+                    </button>
+                    <button class="selector-btn" data-product="1" title="Cà Phê">
+                        <span class="scent-dot" style="background: #6d4c41;"></span>
+                    </button>
+                    <button class="selector-btn" data-product="2" title="Than Hoạt Tính">
+                        <span class="scent-dot" style="background: #37474f;"></span>
+                    </button>
+                    <button class="selector-btn" data-product="3" title="Nghệ Tươi">
+                        <span class="scent-dot" style="background: #f9a825;"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="demo-info-right">
+                <div class="spec-title">📐 Thông số sản phẩm</div>
+                <div class="spec-item"><span class="spec-label">Chiều dài</span><span class="spec-value">7.0 cm</span></div>
+                <div class="spec-item"><span class="spec-label">Chiều rộng</span><span class="spec-value">7.0 cm</span></div>
+                <div class="spec-item"><span class="spec-label">Chiều cao</span><span class="spec-value">2.5 cm</span></div>
+                <div class="spec-item"><span class="spec-label">Thể tích</span><span class="spec-value">122.5 cm³</span></div>
+                <div class="spec-item"><span class="spec-label">Trọng lượng</span><span class="spec-value">100 g</span></div>
+                <div class="spec-item"><span class="spec-label">Vật liệu</span><span class="spec-value">Kraft tái chế</span></div>
+
+                <div class="spec-title" style="margin-top: 30px;">🌿 Đặc tính nổi bật</div>
+                <div class="spec-item"><span class="spec-label">Độ pH</span><span class="spec-value">7.5 - 8.5</span></div>
+                <div class="spec-item"><span class="spec-label">Hạn sử dụng</span><span class="spec-value">12 tháng</span></div>
+                <div class="spec-item"><span class="spec-label">Bao bì</span><span class="spec-value highlight">100% tái chế</span></div>
+
+                <div class="dimensions-visual">
+                    <h4>Kích thước hộp</h4>
+                    <div class="dim-box">
+                        <div class="dim-line-h"></div>
+                        <div class="dim-shape">
+                            <div class="dim-line-v"></div>
+                            <div class="dim-label">7 × 7 × 2.5 cm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAMPAIGN -->
     <section id="campaign" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -884,7 +1303,7 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-brand">GREEN SOAP COMPANY</div>
@@ -895,6 +1314,704 @@
             </div>
         </div>
     </footer>
+
+    <!-- ===== THREE.JS IMPORT MAP ===== -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <!-- ===== 3D SCRIPT ===== -->
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // ============================================================
+        // 1. LOAD LOGO TRƯỚC – ĐÂY LÀ ĐIỂM QUAN TRỌNG NHẤT
+        // ============================================================
+        // Dùng Promise để CHỜ logo load xong mới tạo texture & mesh.
+        // Điều này đảm bảo logo.png thực sự được vẽ vào mặt trước.
+        const logoImage = new Image();
+        logoImage.crossOrigin = 'anonymous';
+
+        const logoReady = new Promise((resolve, reject) => {
+            logoImage.onload = () => {
+                console.log('✅ logo.png đã load thành công:', logoImage.naturalWidth, 'x', logoImage.naturalHeight);
+                resolve(logoImage);
+            };
+            logoImage.onerror = () => {
+                console.warn('⚠️ Không tải được logo.png, sẽ dùng fallback vẽ tay.');
+                reject(new Error('Logo load failed'));
+            };
+            logoImage.src = 'assets/images/logo.png';
+        });
+
+        // Ẩn loader khi logo sẵn sàng (dù thành công hay thất bại)
+        logoReady.finally(() => {
+            const loader = document.getElementById('loader');
+            if (loader) loader.classList.add('hidden');
+        });
+
+        // ============================================================
+        // 2. SCENE SETUP
+        // ============================================================
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xeaf6e3);
+        scene.fog = new THREE.Fog(0xeaf6e3, 12, 28);
+
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.set(0, 2.5, 7);
+        camera.lookAt(0, 0.4, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.shadowMap.bias = 0.0001;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.1;
+        container.appendChild(renderer.domElement);
+
+        // ============================================================
+        // 3. CONTROLS
+        // ============================================================
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.06;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 1.2;
+        controls.enableZoom = true;
+        controls.zoomSpeed = 0.8;
+        controls.enablePan = false;
+        controls.target.set(0, 0.4, 0);
+        controls.maxPolarAngle = Math.PI / 2;
+        controls.minDistance = 3.5;
+        controls.maxDistance = 14;
+
+        // ============================================================
+        // 4. LIGHTS
+        // ============================================================
+        scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0xc8e6c9, 0.9);
+        hemiLight.position.set(0, 10, 0);
+        scene.add(hemiLight);
+
+        const dirLight = new THREE.DirectionalLight(0xfff8e6, 1.4);
+        dirLight.position.set(5, 12, 7);
+        dirLight.castShadow = true;
+        dirLight.shadow.mapSize.width = 2048;
+        dirLight.shadow.mapSize.height = 2048;
+        const d = 10;
+        dirLight.shadow.camera.left = -d;
+        dirLight.shadow.camera.right = d;
+        dirLight.shadow.camera.top = d;
+        dirLight.shadow.camera.bottom = -d;
+        dirLight.shadow.camera.near = 2;
+        dirLight.shadow.camera.far = 30;
+        dirLight.shadow.bias = -0.0005;
+        dirLight.shadow.radius = 4;
+        scene.add(dirLight);
+
+        const fillLight = new THREE.DirectionalLight(0xd4f0d4, 0.5);
+        fillLight.position.set(-6, 6, -4);
+        scene.add(fillLight);
+
+        const rimLight = new THREE.PointLight(0xffe0aa, 0.6, 20);
+        rimLight.position.set(0, 4, -5);
+        scene.add(rimLight);
+
+        // ============================================================
+        // 5. FLOOR
+        // ============================================================
+        const floorGeo = new THREE.CircleGeometry(9, 48);
+        const floorMat = new THREE.MeshStandardMaterial({
+            color: 0xc8e6c9,
+            roughness: 0.9,
+            transparent: true,
+            opacity: 0.5,
+            side: THREE.DoubleSide
+        });
+        const floor = new THREE.Mesh(floorGeo, floorMat);
+        floor.rotation.x = -Math.PI / 2;
+        floor.position.y = -0.01;
+        floor.receiveShadow = true;
+        scene.add(floor);
+
+        // ============================================================
+        // 6. TEXTURE HELPERS
+        // ============================================================
+        const TEX_SIZE = 512;
+
+        function createKraftTexture(baseColor = '#e8d5b7') {
+            const canvas = document.createElement('canvas');
+            canvas.width = TEX_SIZE;
+            canvas.height = TEX_SIZE;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = baseColor;
+            ctx.fillRect(0, 0, TEX_SIZE, TEX_SIZE);
+
+            const imageData = ctx.getImageData(0, 0, TEX_SIZE, TEX_SIZE);
+            const data = imageData.data;
+            for (let i = 0; i < data.length; i += 4) {
+                const noise = (Math.random() - 0.5) * 22;
+                data[i] = Math.min(255, Math.max(0, data[i] + noise));
+                data[i+1] = Math.min(255, Math.max(0, data[i+1] + noise * 0.7));
+                data[i+2] = Math.min(255, Math.max(0, data[i+2] + noise * 0.5));
+            }
+            ctx.putImageData(imageData, 0, 0);
+
+            ctx.globalAlpha = 0.05;
+            ctx.strokeStyle = '#a88b6a';
+            for (let s = 0; s < 200; s++) {
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * TEX_SIZE, Math.random() * TEX_SIZE);
+                ctx.lineTo(Math.random() * TEX_SIZE, Math.random() * TEX_SIZE);
+                ctx.stroke();
+            }
+            ctx.globalAlpha = 1.0;
+            return { canvas, ctx };
+        }
+
+        // ---- VẼ LOGO PNG LÊN CANVAS (giữ đúng tỉ lệ) ----
+        function drawLogoOnCanvas(ctx, cx, cy, size) {
+            // Vòng tròn trắng nền
+            ctx.beginPath();
+            ctx.arc(cx, cy, size * 0.58, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = 'rgba(46,125,50,0.2)';
+            ctx.shadowBlur = 18;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Viền xanh
+            ctx.beginPath();
+            ctx.arc(cx, cy, size * 0.58, 0, Math.PI * 2);
+            ctx.strokeStyle = '#2e7d32';
+            ctx.lineWidth = 5;
+            ctx.stroke();
+
+            // ---- LOGO PNG ----
+            if (logoImage.complete && logoImage.naturalWidth > 0) {
+                // Giữ đúng tỉ lệ khung hình
+                const maxLogoSize = size * 0.95;
+                const ratio = logoImage.naturalWidth / logoImage.naturalHeight;
+                let drawW = maxLogoSize;
+                let drawH = maxLogoSize;
+                if (ratio > 1) {
+                    drawH = maxLogoSize / ratio;
+                } else {
+                    drawW = maxLogoSize * ratio;
+                }
+                ctx.drawImage(
+                    logoImage,
+                    cx - drawW / 2,
+                    cy - drawH / 2,
+                    drawW,
+                    drawH
+                );
+            } else {
+                // Fallback vector nếu logo chưa sẵn sàng
+                ctx.fillStyle = '#2e7d32';
+                ctx.font = 'bold ' + (size * 0.22) + 'px "Montserrat", Arial, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('GREEN', cx, cy - size * 0.12);
+                ctx.font = 'bold ' + (size * 0.16) + 'px "Montserrat", Arial, sans-serif';
+                ctx.fillStyle = '#4caf50';
+                ctx.fillText('SOAP', cx, cy + size * 0.02);
+                ctx.font = 'bold ' + (size * 0.09) + 'px "Montserrat", Arial, sans-serif';
+                ctx.fillStyle = '#2e7d32';
+                ctx.fillText('COMPANY', cx, cy + size * 0.15);
+            }
+        }
+
+        // ---- TẠO TEXTURE MẶT TRƯỚC (có LOGO PNG) ----
+        function createFrontTexture(scentName, scentColor) {
+            const { canvas, ctx } = createKraftTexture('#e8d5b7');
+            const w = TEX_SIZE, h = TEX_SIZE;
+
+            ctx.strokeStyle = scentColor;
+            ctx.lineWidth = 6;
+            ctx.strokeRect(14, 14, w - 28, h - 28);
+
+            // Vẽ LOGO PNG ở vị trí trung tâm trên
+            drawLogoOnCanvas(ctx, w / 2, h * 0.28, 190);
+
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.font = 'bold 46px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#1e3a1e';
+            ctx.shadowColor = 'rgba(255,255,255,0.7)';
+            ctx.shadowBlur = 8;
+            ctx.fillText('XÀ PHÒNG', w / 2, h * 0.56);
+            ctx.font = 'bold 38px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = scentColor;
+            ctx.fillText(scentName.toUpperCase(), w / 2, h * 0.66);
+            ctx.shadowBlur = 0;
+
+            ctx.font = 'italic 22px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#3a5e3a';
+            ctx.fillText('"Lọc dầu thải, trải mầm xanh"', w / 2, h * 0.79);
+
+            ctx.font = 'bold 30px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#2e7d32';
+            ctx.fillText('100g', w / 2, h * 0.89);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.anisotropy = 4;
+            return texture;
+        }
+
+        function createBackTexture(ingredients) {
+            const { canvas, ctx } = createKraftTexture('#e8d5b7');
+            const w = TEX_SIZE, h = TEX_SIZE;
+
+            ctx.strokeStyle = '#7a9e7a';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(20, 20, w - 40, h - 40);
+
+            ctx.textAlign = 'center';
+            ctx.font = 'bold 34px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#1e3a1e';
+            ctx.fillText('THÀNH PHẦN', w / 2, 90);
+
+            ctx.font = '24px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#2e4a2e';
+            ingredients.forEach((line, i) => ctx.fillText(line, w / 2, 160 + i * 42));
+
+            ctx.font = 'bold 28px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#1e3a1e';
+            ctx.fillText('Độ pH: 7.5 - 8.5', w / 2, 400);
+            ctx.font = '24px "Montserrat", Arial, sans-serif';
+            ctx.fillText('Hạn sử dụng: 12 tháng', w / 2, 455);
+            ctx.font = 'italic 20px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#5a7a5a';
+            ctx.fillText('Kể từ ngày sản xuất', w / 2, 505);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.anisotropy = 4;
+            return texture;
+        }
+
+        function createSideTexture(title, lines, color) {
+            const { canvas, ctx } = createKraftTexture('#e8d5b7');
+            const w = TEX_SIZE, h = TEX_SIZE;
+
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.strokeRect(25, 25, w - 50, h - 50);
+
+            ctx.textAlign = 'center';
+            ctx.font = 'bold 36px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#1e3a1e';
+            ctx.fillText(title, w / 2, 110);
+
+            ctx.font = '24px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#2e4a2e';
+            lines.forEach((line, i) => ctx.fillText(line, w / 2, 190 + i * 45));
+
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.anisotropy = 4;
+            return texture;
+        }
+
+        function createTopTexture(scentName, color) {
+            const { canvas, ctx } = createKraftTexture('#e8d5b7');
+            const w = TEX_SIZE, h = TEX_SIZE;
+
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.font = 'bold 70px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#1e4a2e';
+            ctx.shadowColor = 'rgba(200,230,200,0.7)';
+            ctx.shadowBlur = 12;
+            ctx.fillText('GREEN', w / 2, h / 2 - 50);
+
+            ctx.font = 'bold 60px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = color;
+            ctx.fillText('SOAP', w / 2, h / 2 + 30);
+
+            ctx.font = 'bold 28px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#2e5e3e';
+            ctx.shadowBlur = 0;
+            ctx.fillText(scentName.toUpperCase(), w / 2, h / 2 + 110);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.anisotropy = 4;
+            return texture;
+        }
+
+        function createBottomTexture() {
+            const { canvas, ctx } = createKraftTexture('#e8d5b7');
+            const w = TEX_SIZE, h = TEX_SIZE;
+
+            ctx.strokeStyle = '#8b7a5a';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(30, 30, w - 60, h - 60);
+
+            ctx.textAlign = 'center';
+            ctx.font = '24px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#4a3a2a';
+            ctx.fillText('Lô SX: GSC-2026-03', w / 2, 100);
+            ctx.fillText('Ngày SX: 15/03/2026', w / 2, 155);
+            ctx.fillText('HSD: 15/03/2027', w / 2, 210);
+
+            const barY = 290, barWidth = 5, barGap = 4, startX = w / 2 - 175;
+            ctx.fillStyle = '#1e1e1e';
+            for (let i = 0; i < 32; i++) {
+                const hBar = 35 + Math.floor(Math.random() * 45);
+                ctx.fillRect(startX + i * (barWidth + barGap), barY, barWidth, hBar);
+            }
+            ctx.font = '18px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#1e1e1e';
+            ctx.fillText('8 901234 567890', w / 2, barY + 90);
+
+            ctx.font = 'bold 20px "Montserrat", Arial, sans-serif';
+            ctx.fillStyle = '#2e7d32';
+            ctx.fillText('🇻🇳 Made in Vietnam', w / 2, 430);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.anisotropy = 4;
+            return texture;
+        }
+
+        // ============================================================
+        // 7. PRODUCTS DATA
+        // ============================================================
+        const products = [
+            {
+                name: 'Chanh Sả', color: '#8bc34a', colorHex: 0x8bc34a,
+                tagline: '"Hương thơm dịu mát, sảng khoái và hỗ trợ kháng khuẩn nhẹ."',
+                features: ['Dầu ăn tái chế tinh lọc', 'Tinh dầu chanh sả tự nhiên', 'Độ pH an toàn 7.5 - 8.5', 'Kháng khuẩn nhẹ, thơm mát'],
+                ingredients: ['• Dầu ăn tái chế', '• Tinh dầu chanh sả', '• NaOH (Xút)', '• Nước tinh khiết'],
+                guide: ['1. Làm ướt xà phòng', '2. Xoa nhẹ tạo bọt', '3. Rửa sạch với nước', '4. Bảo quản khô ráo', '', 'Kháng khuẩn nhẹ', 'Hương thơm sảng khoái']
+            },
+            {
+                name: 'Cà Phê', color: '#8d6e63', colorHex: 0x8d6e63,
+                tagline: '"Tẩy tế bào chết nhẹ nhàng, khử mùi gian bếp hiệu quả."',
+                features: ['Dầu ăn tái chế tinh lọc', 'Bột cà phê nguyên chất', 'Độ pH an toàn 7.5 - 8.5', 'Tẩy tế bào chết tự nhiên'],
+                ingredients: ['• Dầu ăn tái chế', '• Bột cà phê nguyên chất', '• NaOH (Xút)', '• Nước tinh khiết'],
+                guide: ['1. Làm ướt xà phòng', '2. Xoa nhẹ tạo bọt', '3. Rửa sạch với nước', '4. Bảo quản khô ráo', '', 'Tẩy tế bào chết', 'Khử mùi gian bếp']
+            },
+            {
+                name: 'Than Hoạt Tính', color: '#546e7a', colorHex: 0x546e7a,
+                tagline: '"Làm sạch sâu, loại bỏ bụi bẩn và dầu thừa bám dính."',
+                features: ['Dầu ăn tái chế tinh lọc', 'Than hoạt tính cao cấp', 'Độ pH an toàn 7.5 - 8.5', 'Làm sạch sâu, loại dầu thừa'],
+                ingredients: ['• Dầu ăn tái chế', '• Than hoạt tính', '• NaOH (Xút)', '• Nước tinh khiết'],
+                guide: ['1. Làm ướt xà phòng', '2. Xoa nhẹ tạo bọt', '3. Rửa sạch với nước', '4. Bảo quản khô ráo', '', 'Làm sạch sâu', 'Loại bỏ dầu thừa']
+            },
+            {
+                name: 'Nghệ Tươi', color: '#f9a825', colorHex: 0xf9a825,
+                tagline: '"Dưỡng da dịu nhẹ, làm sáng và chăm sóc tự nhiên."',
+                features: ['Dầu ăn tái chế tinh lọc', 'Tinh bột nghệ nguyên chất', 'Độ pH an toàn 7.5 - 8.5', 'Dưỡng da, làm sáng tự nhiên'],
+                ingredients: ['• Dầu ăn tái chế', '• Tinh bột nghệ', '• NaOH (Xút)', '• Nước tinh khiết'],
+                guide: ['1. Làm ướt xà phòng', '2. Xoa nhẹ tạo bọt', '3. Rửa sạch với nước', '4. Bảo quản khô ráo', '', 'Dưỡng da dịu nhẹ', 'Làm sáng tự nhiên']
+            }
+        ];
+
+        // ============================================================
+        // 8. BUILD 3D SCENE (CHỜ LOGO READY)
+        // ============================================================
+        const boxWidth = 2.6, boxHeight = 2.6, boxDepth = 0.95;
+        const spacing = 3.8;
+        const comparePositions = [
+            { x: -spacing / 2, z: -spacing / 2 },
+            { x: spacing / 2, z: -spacing / 2 },
+            { x: -spacing / 2, z: spacing / 2 },
+            { x: spacing / 2, z: spacing / 2 }
+        ];
+
+        const boxGroups = [];
+        const soapBoxes = [];
+
+        // Hàm build toàn bộ scene – chỉ chạy sau khi logo ready
+        async function buildScene() {
+            // Đợi logo load xong (dù thành công hay thất bại)
+            try {
+                await logoReady;
+            } catch (e) {
+                console.warn('Tiếp tục với fallback vẽ tay.');
+            }
+
+            // Bây giờ logoImage đã sẵn sàng (hoặc đã fail)
+            // → Tạo texture với logo THỰC SỰ được vẽ vào
+            products.forEach((product, index) => {
+                const textureFront = createFrontTexture(product.name, product.color);
+                const textureBack = createBackTexture(product.ingredients);
+                const textureLeft = createSideTexture('HƯỚNG DẪN', product.guide, product.color);
+                const textureRight = createSideTexture('CAM KẾT XANH',
+                    ['🌿 100% Eco-friendly', '', '• Bao bì tái chế', '• Không thử nghiệm', '   trên động vật', '• An toàn cho da'],
+                    product.color);
+                const textureTop = createTopTexture(product.name, product.color);
+                const textureBottom = createBottomTexture();
+
+                // Thứ tự material: [+X right, -X left, +Y top, -Y bottom, +Z front, -Z back]
+                const materials = [
+                    new THREE.MeshStandardMaterial({ map: textureRight, roughness: 0.82, metalness: 0.02 }),
+                    new THREE.MeshStandardMaterial({ map: textureLeft, roughness: 0.82, metalness: 0.02 }),
+                    new THREE.MeshStandardMaterial({ map: textureTop, roughness: 0.82, metalness: 0.02 }),
+                    new THREE.MeshStandardMaterial({ map: textureBottom, roughness: 0.82, metalness: 0.02 }),
+                    new THREE.MeshStandardMaterial({ map: textureFront, roughness: 0.82, metalness: 0.02 }), // FRONT = logo
+                    new THREE.MeshStandardMaterial({ map: textureBack, roughness: 0.82, metalness: 0.02 })
+                ];
+
+                const boxGeometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+                const soapBox = new THREE.Mesh(boxGeometry, materials);
+                soapBox.castShadow = true;
+                soapBox.receiveShadow = true;
+                soapBox.position.set(0, 0.5, 0);
+                soapBox.visible = (index === 0);
+
+                const edges = new THREE.EdgesGeometry(boxGeometry);
+                const line = new THREE.LineSegments(
+                    edges,
+                    new THREE.LineBasicMaterial({ color: 0x6a8a6a, linewidth: 1, transparent: true, opacity: 0.5 })
+                );
+                soapBox.add(line);
+
+                scene.add(soapBox);
+                soapBoxes.push(soapBox);
+
+                // Ring dưới hộp
+                const ringGeometry = new THREE.RingGeometry(1.7, 1.85, 48);
+                const ringMaterial = new THREE.MeshBasicMaterial({
+                    color: product.colorHex,
+                    side: THREE.DoubleSide,
+                    transparent: true,
+                    opacity: 0.35
+                });
+                const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+                ring.rotation.x = -Math.PI / 2;
+                ring.position.set(0, 0.01, 0);
+                ring.visible = (index === 0);
+                scene.add(ring);
+
+                boxGroups.push({
+                    box: soapBox,
+                    ring: ring,
+                    index: index,
+                    product: product,
+                    comparePos: comparePositions[index]
+                });
+            });
+
+            console.log('✅ Đã build xong 4 hộp 3D với logo.png thực sự!');
+
+            // Sau khi build xong mới init UI
+            showSingleProduct(0);
+        }
+
+        // ============================================================
+        // 9. UI STATE & LOGIC
+        // ============================================================
+        let currentProduct = 0;
+        let compareMode = false;
+        let autoRotateEnabled = true;
+
+        const productInfo = {
+            accents: ['🌿 TƯƠI MÁT', '☕ ĐẬM ĐÀ', '🖤 LÀM SẠCH SÂU', '💛 DƯỠNG DA'],
+            badges: ['🌿 HỮU CƠ', '☕ TỰ NHIÊN', '🖤 CAO CẤP', '💛 DƯỠNG DA']
+        };
+
+        function updateProductUI(index) {
+            const product = products[index];
+            document.getElementById('productNameMain').textContent = product.name;
+            document.getElementById('productAccent').textContent = productInfo.accents[index];
+            document.getElementById('productBadge').textContent = productInfo.badges[index];
+            document.getElementById('productTagline').textContent = product.tagline;
+
+            const featuresList = document.getElementById('productFeatures');
+            featuresList.innerHTML = '';
+            product.features.forEach(f => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="check">✓</span> ${f}`;
+                featuresList.appendChild(li);
+            });
+        }
+
+        function showSingleProduct(index) {
+            compareMode = false;
+            document.getElementById('btnCompare').classList.remove('compare-active');
+            currentProduct = index;
+
+            boxGroups.forEach((item, i) => {
+                const isSelected = (i === index);
+                if (isSelected) {
+                    item.box.visible = true;
+                    item.ring.visible = true;
+                    animateBoxTo(item, 0, 0, 1, 0.5, 1);
+                } else {
+                    animateBoxTo(item, item.box.position.x, item.box.position.z, 0, 0.5, 0, () => {
+                        item.box.visible = false;
+                        item.ring.visible = false;
+                    });
+                }
+            });
+
+            updateProductUI(index);
+
+            document.querySelectorAll('.selector-btn').forEach(btn => {
+                btn.classList.toggle('active', parseInt(btn.dataset.product) === index);
+            });
+
+            smoothCameraMove(0, 2.5, 7, 0, 0.4, 0);
+        }
+
+        function showCompareView() {
+            compareMode = true;
+            document.getElementById('btnCompare').classList.add('compare-active');
+
+            boxGroups.forEach((item) => {
+                item.box.visible = true;
+                item.ring.visible = false;
+                const cp = item.comparePos;
+                animateBoxTo(item, cp.x, cp.z, 1, 0.5, 0.85);
+            });
+
+            smoothCameraMove(0, 5, 11, 0, 0.5, 0);
+
+            document.querySelectorAll('.selector-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+        }
+
+        function animateBoxTo(item, targetX, targetZ, targetOpacity, targetY, targetScale, onComplete) {
+            const box = item.box;
+            const startX = box.position.x;
+            const startZ = box.position.z;
+            const startY = box.position.y;
+            const startScale = box.scale.x;
+            const startOpacity = box.material[0].opacity;
+            const startTime = performance.now();
+            const duration = 600;
+
+            function step(now) {
+                const elapsed = now - startTime;
+                const t = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - t, 3);
+
+                box.position.x = startX + (targetX - startX) * eased;
+                box.position.z = startZ + (targetZ - startZ) * eased;
+                box.position.y = startY + (targetY - startY) * eased;
+                box.scale.setScalar(startScale + (targetScale - startScale) * eased);
+
+                box.material.forEach(mat => {
+                    mat.transparent = true;
+                    mat.opacity = startOpacity + (targetOpacity - startOpacity) * eased;
+                });
+
+                if (t < 1) requestAnimationFrame(step);
+                else if (onComplete) onComplete();
+            }
+            requestAnimationFrame(step);
+        }
+
+        function smoothCameraMove(targetX, targetY, targetZ, lookX, lookY, lookZ) {
+            const startX = camera.position.x;
+            const startY = camera.position.y;
+            const startZ = camera.position.z;
+            const startLookX = controls.target.x;
+            const startLookY = controls.target.y;
+            const startLookZ = controls.target.z;
+            const startTime = performance.now();
+            const duration = 800;
+
+            function step(now) {
+                const elapsed = now - startTime;
+                const t = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - t, 3);
+
+                camera.position.x = startX + (targetX - startX) * eased;
+                camera.position.y = startY + (targetY - startY) * eased;
+                camera.position.z = startZ + (targetZ - startZ) * eased;
+
+                controls.target.x = startLookX + (lookX - startLookX) * eased;
+                controls.target.y = startLookY + (lookY - startLookY) * eased;
+                controls.target.z = startLookZ + (lookZ - startLookZ) * eased;
+
+                controls.update();
+                if (t < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        // ============================================================
+        // 10. EVENT LISTENERS
+        // ============================================================
+        document.querySelectorAll('.selector-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const idx = parseInt(btn.dataset.product);
+                showSingleProduct(idx);
+            });
+        });
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const idx = parseInt(card.dataset.product);
+                showSingleProduct(idx);
+                document.getElementById('demo').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById('btnAutoRotate').addEventListener('click', (e) => {
+            autoRotateEnabled = !autoRotateEnabled;
+            controls.autoRotate = autoRotateEnabled;
+            e.target.classList.toggle('active', autoRotateEnabled);
+            e.target.textContent = autoRotateEnabled ? '⏸' : '▶';
+        });
+
+        document.getElementById('btnReset').addEventListener('click', () => {
+            if (compareMode) showCompareView();
+            else showSingleProduct(currentProduct);
+        });
+
+        document.getElementById('btnCompare').addEventListener('click', () => {
+            if (compareMode) showSingleProduct(currentProduct);
+            else showCompareView();
+        });
+
+        window.addEventListener('resize', () => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        });
+
+        // ============================================================
+        // 11. ANIMATE LOOP
+        // ============================================================
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.016;
+            controls.update();
+
+            boxGroups.forEach((item, i) => {
+                if (item.box.visible) {
+                    const offset = Math.sin(time * 1.4 + i * 1.1) * 0.06;
+                    item.box.position.y = 0.5 + offset;
+                }
+            });
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // ============================================================
+        // 12. START
+        // ============================================================
+        buildScene();
+
+        console.log('🌿 Green Soap 3D Showcase ready!');
+    </script>
 
 </body>
 </html>
