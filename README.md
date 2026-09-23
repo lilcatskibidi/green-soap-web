@@ -79,6 +79,4 @@ Phần demo 3D được xây dựng với **Three.js** và **OrbitControls**, ma
 
 **Bao bì:** Hộp giấy Kraft tái chế 100% không tẩy trắng, thắt dây thừng thô mộc mạc, phân hủy sinh học.
 
----
 
-## 📁 Cấu trúc dự án
