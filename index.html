@@ -105,7 +105,6 @@
             margin: 0 auto;
         }
 
-        /* HEADER */
         header {
             position: fixed;
             top: 0; left: 0;
@@ -174,7 +173,6 @@
         nav a:hover::after { width: 100%; }
         nav a:hover { color: var(--primary-light); }
 
-        /* HERO */
         #home {
             padding: 160px 0 100px;
             background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
@@ -310,7 +308,6 @@
             box-shadow: 0 30px 60px rgba(46, 125, 50, 0.25);
         }
 
-        /* ABOUT */
         #about { background: var(--bg-white); }
 
         .about-grid {
@@ -353,7 +350,6 @@
 
         .about-card p { color: #555; font-size: 0.98rem; }
 
-        /* PRODUCTS */
         #products { background: var(--bg-off); }
 
         .product-grid {
@@ -398,7 +394,6 @@
 
         .product-card p { font-size: 0.92rem; color: #666; }
 
-        /* MEDIA */
         #media { background: var(--bg-white); }
 
         .audio-player-box {
@@ -438,7 +433,6 @@
             filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
         }
 
-        /* 3D DEMO */
         #demo {
             background: linear-gradient(160deg, #f0f9e8 0%, #e3f2dc 40%, #f7fcf0 100%);
             padding: 0;
@@ -588,7 +582,7 @@
             height: 680px;
             border-radius: 36px;
             overflow: hidden;
-            background: radial-gradient(ellipse at 50% 30%, #ffffff 0%, #e8f5e9 60%, #d0e8d0 100%);
+            background: radial-gradient(ellipse at 50% 60%, #ffffff 0%, #e8f5e9 55%, #c8e6c9 100%);
             box-shadow:
                 0 30px 80px rgba(46, 125, 50, 0.15),
                 inset 0 0 60px rgba(255, 255, 255, 0.6);
@@ -602,7 +596,6 @@
             height: 100%;
         }
 
-        /* LOADER */
         #loader {
             position: absolute;
             top: 50%;
@@ -903,7 +896,6 @@
         .dim-line-v::before { top: 0; }
         .dim-line-v::after { bottom: 0; }
 
-        /* CAMPAIGN */
         #campaign { background: var(--bg-light); }
 
         .campaign-card {
@@ -963,7 +955,6 @@
         .step h4 { color: var(--primary); font-weight: 700; margin-bottom: 6px; }
         .step p { font-size: 0.88rem; color: #666; margin: 0; }
 
-        /* FOOTER */
         footer {
             background: var(--text-dark);
             color: #fff;
@@ -994,7 +985,6 @@
             margin: 0 auto;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 1100px) {
             .demo-showcase {
                 grid-template-columns: 1fr;
@@ -1056,7 +1046,6 @@
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="container header-inner">
             <a href="#home" class="logo-container">
@@ -1075,7 +1064,6 @@
         </div>
     </header>
 
-    <!-- HERO -->
     <section id="home">
         <div class="container hero-grid">
             <div class="hero-content">
@@ -1097,7 +1085,6 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -1127,7 +1114,6 @@
         </div>
     </section>
 
-    <!-- PRODUCTS -->
     <section id="products" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -1163,7 +1149,6 @@
         </div>
     </section>
 
-    <!-- MEDIA -->
     <section id="media" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -1181,7 +1166,6 @@
         </div>
     </section>
 
-    <!-- 3D DEMO -->
     <section id="demo">
         <div class="demo-hero">
             <h2 class="section-title">Trải Nghiệm 3D</h2>
@@ -1209,7 +1193,6 @@
             <div class="demo-canvas-wrapper">
                 <div id="canvas-container"></div>
 
-                <!-- LOADER chờ logo -->
                 <div id="loader">
                     <img src="assets/images/logo.png" alt="Loading" class="loader-logo"
                          onerror="this.src='https://via.placeholder.com/90/2e7d32/ffffff?text=GS'">
@@ -1242,10 +1225,10 @@
 
             <div class="demo-info-right">
                 <div class="spec-title">📐 Thông số sản phẩm</div>
-                <div class="spec-item"><span class="spec-label">Chiều dài</span><span class="spec-value">7.0 cm</span></div>
-                <div class="spec-item"><span class="spec-label">Chiều rộng</span><span class="spec-value">7.0 cm</span></div>
-                <div class="spec-item"><span class="spec-label">Chiều cao</span><span class="spec-value">2.5 cm</span></div>
-                <div class="spec-item"><span class="spec-label">Thể tích</span><span class="spec-value">122.5 cm³</span></div>
+                <div class="spec-item"><span class="spec-label">Chiều dài</span><span class="spec-value">6.5 cm</span></div>
+                <div class="spec-item"><span class="spec-label">Chiều rộng</span><span class="spec-value">6.5 cm</span></div>
+                <div class="spec-item"><span class="spec-label">Chiều cao</span><span class="spec-value">3.0 cm</span></div>
+                <div class="spec-item"><span class="spec-label">Thể tích</span><span class="spec-value">126.75 cm³</span></div>
                 <div class="spec-item"><span class="spec-label">Trọng lượng</span><span class="spec-value">100 g</span></div>
                 <div class="spec-item"><span class="spec-label">Vật liệu</span><span class="spec-value">Kraft tái chế</span></div>
 
@@ -1260,7 +1243,7 @@
                         <div class="dim-line-h"></div>
                         <div class="dim-shape">
                             <div class="dim-line-v"></div>
-                            <div class="dim-label">7 × 7 × 2.5 cm</div>
+                            <div class="dim-label">6.5 × 6.5 × 3 cm</div>
                         </div>
                     </div>
                 </div>
@@ -1268,7 +1251,6 @@
         </div>
     </section>
 
-    <!-- CAMPAIGN -->
     <section id="campaign" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -1303,7 +1285,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-brand">GREEN SOAP COMPANY</div>
@@ -1315,7 +1296,6 @@
         </div>
     </footer>
 
-    <!-- ===== THREE.JS IMPORT MAP ===== -->
     <script type="importmap">
         {
             "imports": {
@@ -1325,32 +1305,28 @@
         }
     </script>
 
-    <!-- ===== 3D SCRIPT ===== -->
     <script type="module">
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
         // ============================================================
-        // 1. LOAD LOGO TRƯỚC – ĐÂY LÀ ĐIỂM QUAN TRỌNG NHẤT
+        // 1. LOAD LOGO
         // ============================================================
-        // Dùng Promise để CHỜ logo load xong mới tạo texture & mesh.
-        // Điều này đảm bảo logo.png thực sự được vẽ vào mặt trước.
         const logoImage = new Image();
         logoImage.crossOrigin = 'anonymous';
 
         const logoReady = new Promise((resolve, reject) => {
             logoImage.onload = () => {
-                console.log('✅ logo.png đã load thành công:', logoImage.naturalWidth, 'x', logoImage.naturalHeight);
+                console.log('✅ logo.png đã load:', logoImage.naturalWidth, 'x', logoImage.naturalHeight);
                 resolve(logoImage);
             };
             logoImage.onerror = () => {
-                console.warn('⚠️ Không tải được logo.png, sẽ dùng fallback vẽ tay.');
+                console.warn('⚠️ Không tải được logo.png, dùng fallback vẽ tay.');
                 reject(new Error('Logo load failed'));
             };
             logoImage.src = 'assets/images/logo.png';
         });
 
-        // Ẩn loader khi logo sẵn sàng (dù thành công hay thất bại)
         logoReady.finally(() => {
             const loader = document.getElementById('loader');
             if (loader) loader.classList.add('hidden');
@@ -1362,11 +1338,11 @@
         const container = document.getElementById('canvas-container');
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0xeaf6e3);
-        scene.fog = new THREE.Fog(0xeaf6e3, 12, 28);
+        scene.fog = new THREE.Fog(0xeaf6e3, 14, 32);
 
         const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.set(0, 2.5, 7);
-        camera.lookAt(0, 0.4, 0);
+        camera.position.set(0, 4, 11);
+        camera.lookAt(0, 2, 0);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
         renderer.setSize(container.clientWidth, container.clientHeight);
@@ -1375,7 +1351,7 @@
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         renderer.shadowMap.bias = 0.0001;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.1;
+        renderer.toneMappingExposure = 1.15;
         container.appendChild(renderer.domElement);
 
         // ============================================================
@@ -1389,10 +1365,10 @@
         controls.enableZoom = true;
         controls.zoomSpeed = 0.8;
         controls.enablePan = false;
-        controls.target.set(0, 0.4, 0);
-        controls.maxPolarAngle = Math.PI / 2;
-        controls.minDistance = 3.5;
-        controls.maxDistance = 14;
+        controls.target.set(0, 2, 0);
+        controls.maxPolarAngle = Math.PI / 2 - 0.05; // không xuống dưới sàn
+        controls.minDistance = 5;
+        controls.maxDistance = 18;
 
         // ============================================================
         // 4. LIGHTS
@@ -1400,49 +1376,62 @@
         scene.add(new THREE.AmbientLight(0xffffff, 0.75));
 
         const hemiLight = new THREE.HemisphereLight(0xffffff, 0xc8e6c9, 0.9);
-        hemiLight.position.set(0, 10, 0);
+        hemiLight.position.set(0, 15, 0);
         scene.add(hemiLight);
 
         const dirLight = new THREE.DirectionalLight(0xfff8e6, 1.4);
-        dirLight.position.set(5, 12, 7);
+        dirLight.position.set(6, 15, 8);
         dirLight.castShadow = true;
         dirLight.shadow.mapSize.width = 2048;
         dirLight.shadow.mapSize.height = 2048;
-        const d = 10;
+        const d = 12;
         dirLight.shadow.camera.left = -d;
         dirLight.shadow.camera.right = d;
         dirLight.shadow.camera.top = d;
         dirLight.shadow.camera.bottom = -d;
         dirLight.shadow.camera.near = 2;
-        dirLight.shadow.camera.far = 30;
+        dirLight.shadow.camera.far = 35;
         dirLight.shadow.bias = -0.0005;
         dirLight.shadow.radius = 4;
         scene.add(dirLight);
 
         const fillLight = new THREE.DirectionalLight(0xd4f0d4, 0.5);
-        fillLight.position.set(-6, 6, -4);
+        fillLight.position.set(-7, 8, -5);
         scene.add(fillLight);
 
-        const rimLight = new THREE.PointLight(0xffe0aa, 0.6, 20);
-        rimLight.position.set(0, 4, -5);
+        const rimLight = new THREE.PointLight(0xffe0aa, 0.7, 25);
+        rimLight.position.set(0, 6, -6);
         scene.add(rimLight);
 
         // ============================================================
-        // 5. FLOOR
+        // 5. FLOOR — Đặt ở y = 0, hộp sẽ bay ở y = 2.5
         // ============================================================
-        const floorGeo = new THREE.CircleGeometry(9, 48);
+        const floorGeo = new THREE.CircleGeometry(12, 64);
         const floorMat = new THREE.MeshStandardMaterial({
             color: 0xc8e6c9,
             roughness: 0.9,
             transparent: true,
-            opacity: 0.5,
+            opacity: 0.45,
             side: THREE.DoubleSide
         });
         const floor = new THREE.Mesh(floorGeo, floorMat);
         floor.rotation.x = -Math.PI / 2;
-        floor.position.y = -0.01;
+        floor.position.y = 0;
         floor.receiveShadow = true;
         scene.add(floor);
+
+        // Vòng tròn sáng dưới sàn để tạo cảm giác hộp đang bay
+        const glowRingGeo = new THREE.RingGeometry(3.5, 5.5, 48);
+        const glowRingMat = new THREE.MeshBasicMaterial({
+            color: 0xa5d6a7,
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.15
+        });
+        const glowRing = new THREE.Mesh(glowRingGeo, glowRingMat);
+        glowRing.rotation.x = -Math.PI / 2;
+        glowRing.position.y = 0.005;
+        scene.add(glowRing);
 
         // ============================================================
         // 6. TEXTURE HELPERS
@@ -1479,9 +1468,7 @@
             return { canvas, ctx };
         }
 
-        // ---- VẼ LOGO PNG LÊN CANVAS (giữ đúng tỉ lệ) ----
         function drawLogoOnCanvas(ctx, cx, cy, size) {
-            // Vòng tròn trắng nền
             ctx.beginPath();
             ctx.arc(cx, cy, size * 0.58, 0, Math.PI * 2);
             ctx.fillStyle = '#ffffff';
@@ -1490,34 +1477,21 @@
             ctx.fill();
             ctx.shadowBlur = 0;
 
-            // Viền xanh
             ctx.beginPath();
             ctx.arc(cx, cy, size * 0.58, 0, Math.PI * 2);
             ctx.strokeStyle = '#2e7d32';
             ctx.lineWidth = 5;
             ctx.stroke();
 
-            // ---- LOGO PNG ----
             if (logoImage.complete && logoImage.naturalWidth > 0) {
-                // Giữ đúng tỉ lệ khung hình
                 const maxLogoSize = size * 0.95;
                 const ratio = logoImage.naturalWidth / logoImage.naturalHeight;
                 let drawW = maxLogoSize;
                 let drawH = maxLogoSize;
-                if (ratio > 1) {
-                    drawH = maxLogoSize / ratio;
-                } else {
-                    drawW = maxLogoSize * ratio;
-                }
-                ctx.drawImage(
-                    logoImage,
-                    cx - drawW / 2,
-                    cy - drawH / 2,
-                    drawW,
-                    drawH
-                );
+                if (ratio > 1) drawH = maxLogoSize / ratio;
+                else drawW = maxLogoSize * ratio;
+                ctx.drawImage(logoImage, cx - drawW / 2, cy - drawH / 2, drawW, drawH);
             } else {
-                // Fallback vector nếu logo chưa sẵn sàng
                 ctx.fillStyle = '#2e7d32';
                 ctx.font = 'bold ' + (size * 0.22) + 'px "Montserrat", Arial, sans-serif';
                 ctx.textAlign = 'center';
@@ -1532,7 +1506,6 @@
             }
         }
 
-        // ---- TẠO TEXTURE MẶT TRƯỚC (có LOGO PNG) ----
         function createFrontTexture(scentName, scentColor) {
             const { canvas, ctx } = createKraftTexture('#e8d5b7');
             const w = TEX_SIZE, h = TEX_SIZE;
@@ -1541,7 +1514,6 @@
             ctx.lineWidth = 6;
             ctx.strokeRect(14, 14, w - 28, h - 28);
 
-            // Vẽ LOGO PNG ở vị trí trung tâm trên
             drawLogoOnCanvas(ctx, w / 2, h * 0.28, 190);
 
             ctx.textAlign = 'center';
@@ -1717,10 +1689,23 @@
         ];
 
         // ============================================================
-        // 8. BUILD 3D SCENE (CHỜ LOGO READY)
+        // 8. BUILD 3D SCENE — HỘP BAY LƠ LỬNG
         // ============================================================
-        const boxWidth = 2.6, boxHeight = 2.6, boxDepth = 0.95;
-        const spacing = 3.8;
+        // Tỉ lệ thực 6.5 : 6.5 : 3 (cm) → scene units
+        // Chọn 1 đơn vị = 1 cm / 1.3 để hộp vừa khung nhìn
+        // boxWidth = 6.5 / 1.3 = 5.0
+        // boxHeight = 6.5 / 1.3 = 5.0
+        // boxDepth = 3.0 / 1.3 = 2.3077
+        const boxWidth  = 5.0;
+        const boxHeight = 5.0;
+        const boxDepth  = 2.3077;
+
+        // ⭐ HOVER_HEIGHT = độ cao hộp bay lên khỏi mặt đất
+        // Hộp cao 5.0 đơn vị → nửa hộp = 2.5. Đặt hover = 3.5 để
+        // mép dưới hộp cách sàn 1.0 đơn vị, tạo cảm giác bay rõ rệt.
+        const HOVER_HEIGHT = 3.5;
+
+        const spacing = 7.0;
         const comparePositions = [
             { x: -spacing / 2, z: -spacing / 2 },
             { x: spacing / 2, z: -spacing / 2 },
@@ -1731,17 +1716,13 @@
         const boxGroups = [];
         const soapBoxes = [];
 
-        // Hàm build toàn bộ scene – chỉ chạy sau khi logo ready
         async function buildScene() {
-            // Đợi logo load xong (dù thành công hay thất bại)
             try {
                 await logoReady;
             } catch (e) {
                 console.warn('Tiếp tục với fallback vẽ tay.');
             }
 
-            // Bây giờ logoImage đã sẵn sàng (hoặc đã fail)
-            // → Tạo texture với logo THỰC SỰ được vẽ vào
             products.forEach((product, index) => {
                 const textureFront = createFrontTexture(product.name, product.color);
                 const textureBack = createBackTexture(product.ingredients);
@@ -1752,13 +1733,12 @@
                 const textureTop = createTopTexture(product.name, product.color);
                 const textureBottom = createBottomTexture();
 
-                // Thứ tự material: [+X right, -X left, +Y top, -Y bottom, +Z front, -Z back]
                 const materials = [
                     new THREE.MeshStandardMaterial({ map: textureRight, roughness: 0.82, metalness: 0.02 }),
                     new THREE.MeshStandardMaterial({ map: textureLeft, roughness: 0.82, metalness: 0.02 }),
                     new THREE.MeshStandardMaterial({ map: textureTop, roughness: 0.82, metalness: 0.02 }),
                     new THREE.MeshStandardMaterial({ map: textureBottom, roughness: 0.82, metalness: 0.02 }),
-                    new THREE.MeshStandardMaterial({ map: textureFront, roughness: 0.82, metalness: 0.02 }), // FRONT = logo
+                    new THREE.MeshStandardMaterial({ map: textureFront, roughness: 0.82, metalness: 0.02 }),
                     new THREE.MeshStandardMaterial({ map: textureBack, roughness: 0.82, metalness: 0.02 })
                 ];
 
@@ -1766,7 +1746,9 @@
                 const soapBox = new THREE.Mesh(boxGeometry, materials);
                 soapBox.castShadow = true;
                 soapBox.receiveShadow = true;
-                soapBox.position.set(0, 0.5, 0);
+
+                // ⭐ Vị trí ban đầu: hộp ở giữa, bay lên cao
+                soapBox.position.set(0, HOVER_HEIGHT, 0);
                 soapBox.visible = (index === 0);
 
                 const edges = new THREE.EdgesGeometry(boxGeometry);
@@ -1779,17 +1761,17 @@
                 scene.add(soapBox);
                 soapBoxes.push(soapBox);
 
-                // Ring dưới hộp
-                const ringGeometry = new THREE.RingGeometry(1.7, 1.85, 48);
+                // Ring trên sàn (dưới hộp) — bán kính theo kích thước mới
+                const ringGeometry = new THREE.RingGeometry(3.0, 3.2, 64);
                 const ringMaterial = new THREE.MeshBasicMaterial({
                     color: product.colorHex,
                     side: THREE.DoubleSide,
                     transparent: true,
-                    opacity: 0.35
+                    opacity: 0.5
                 });
                 const ring = new THREE.Mesh(ringGeometry, ringMaterial);
                 ring.rotation.x = -Math.PI / 2;
-                ring.position.set(0, 0.01, 0);
+                ring.position.set(0, 0.01, 0); // ⭐ Nằm trên sàn
                 ring.visible = (index === 0);
                 scene.add(ring);
 
@@ -1802,9 +1784,7 @@
                 });
             });
 
-            console.log('✅ Đã build xong 4 hộp 3D với logo.png thực sự!');
-
-            // Sau khi build xong mới init UI
+            console.log('✅ Đã build 4 hộp 3D — bay lơ lửng trên sàn!');
             showSingleProduct(0);
         }
 
@@ -1846,9 +1826,12 @@
                 if (isSelected) {
                     item.box.visible = true;
                     item.ring.visible = true;
-                    animateBoxTo(item, 0, 0, 1, 0.5, 1);
+                    // ⭐ Hộp ở giữa, bay lên HOVER_HEIGHT
+                    animateBoxTo(item, 0, 0, 1, HOVER_HEIGHT, 1);
+                    // Ring ở sàn, dưới hộp
+                    item.ring.position.set(0, 0.01, 0);
                 } else {
-                    animateBoxTo(item, item.box.position.x, item.box.position.z, 0, 0.5, 0, () => {
+                    animateBoxTo(item, item.box.position.x, item.box.position.z, 0, HOVER_HEIGHT, 0, () => {
                         item.box.visible = false;
                         item.ring.visible = false;
                     });
@@ -1861,7 +1844,8 @@
                 btn.classList.toggle('active', parseInt(btn.dataset.product) === index);
             });
 
-            smoothCameraMove(0, 2.5, 7, 0, 0.4, 0);
+            // ⭐ Camera nhìn vào hộp đang bay giữa không trung
+            smoothCameraMove(0, 4.5, 11, 0, HOVER_HEIGHT, 0);
         }
 
         function showCompareView() {
@@ -1872,10 +1856,14 @@
                 item.box.visible = true;
                 item.ring.visible = false;
                 const cp = item.comparePos;
-                animateBoxTo(item, cp.x, cp.z, 1, 0.5, 0.85);
+                // ⭐ Tất cả hộp đều bay lên cùng độ cao
+                animateBoxTo(item, cp.x, cp.z, 1, HOVER_HEIGHT, 0.65);
+                // Di chuyển ring theo hộp (nhưng ẩn)
+                item.ring.position.set(cp.x, 0.01, cp.z);
             });
 
-            smoothCameraMove(0, 5, 11, 0, 0.5, 0);
+            // ⭐ Camera lùi xa để thấy cả 4 hộp đang bay
+            smoothCameraMove(0, 8, 16, 0, HOVER_HEIGHT, 0);
 
             document.querySelectorAll('.selector-btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -1986,7 +1974,7 @@
         });
 
         // ============================================================
-        // 11. ANIMATE LOOP
+        // 11. ANIMATE LOOP — HOVER EFFECT
         // ============================================================
         let time = 0;
         function animate() {
@@ -1994,10 +1982,23 @@
             time += 0.016;
             controls.update();
 
+            // ⭐ Hiệu ứng hộp bay lơ lửng — float lên xuống nhẹ nhàng
             boxGroups.forEach((item, i) => {
                 if (item.box.visible) {
-                    const offset = Math.sin(time * 1.4 + i * 1.1) * 0.06;
-                    item.box.position.y = 0.5 + offset;
+                    // Biên độ dao động ±0.25 đơn vị
+                    const floatOffset = Math.sin(time * 1.2 + i * 1.4) * 0.25;
+                    // Xoay nhẹ nhàng quanh trục Y
+                    item.box.rotation.y = Math.sin(time * 0.4 + i * 0.9) * 0.08;
+                    // Vị trí Y = HOVER_HEIGHT + floatOffset
+                    item.box.position.y = HOVER_HEIGHT + floatOffset;
+                }
+            });
+
+            // Ring nhấp nháy nhẹ theo nhịp hộp bay
+            boxGroups.forEach((item) => {
+                if (item.ring.visible) {
+                    item.ring.scale.setScalar(1 + Math.sin(time * 1.2) * 0.05);
+                    item.ring.material.opacity = 0.4 + Math.sin(time * 1.2) * 0.15;
                 }
             });
 
@@ -2010,7 +2011,7 @@
         // ============================================================
         buildScene();
 
-        console.log('🌿 Green Soap 3D Showcase ready!');
+        console.log('🌿 Green Soap 3D — Hộp bay lơ lửng trên sàn!');
     </script>
 
 </body>
